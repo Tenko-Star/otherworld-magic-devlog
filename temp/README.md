@@ -3,7 +3,7 @@
 本目录保存阶段性交接、续写上下文和临时待办，并纳入 Git 管理。
 
 - 交接文档注明日期、当前任务、已完成事项、待确认问题和相关资料路径。
-- 写作约束与正式资料入口见 [AGENTS.md](../AGENTS.md) 和 [db/README.md](../db/README.md)。
+- 写作约束及强制质检流程见 [writing_constraints.md](../db/writing_constraints.md)，协作与资料入口见 [AGENTS.md](../AGENTS.md) 和 [db/README.md](../db/README.md)。每轮写作的 novel-humanizer 报告在本目录保存并于下方登记，须记录实际修改与复查结果，不能仅留检查建议。
 - 已确认的设定、规划、正文事实与进度应同步回 `db/` 中对应文件；临时交接不替代正式资料，不将未确认事项写成定论。
 - 保留需要的交接记录；未经用户授权不自动清理文件。
 
