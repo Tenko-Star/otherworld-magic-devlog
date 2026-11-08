@@ -3,12 +3,10 @@
 本目录保存阶段性交接、续写上下文和临时待办，并纳入 Git 管理。
 
 - 交接文档注明日期、当前任务、已完成事项、待确认问题和相关资料路径。
-- 写作约束及强制质检流程见 [writing_constraints.md](../db/writing_constraints.md)，协作与资料入口见 [AGENTS.md](../AGENTS.md) 和 [db/README.md](../db/README.md)。每轮写作的 novel-humanizer 报告在本目录保存并于下方登记，须记录实际修改与复查结果，不能仅留检查建议。
+- 写作约束及强制质检流程见 [writing_constraints.md](../db/writing_constraints.md)，协作与资料入口见 [AGENTS.md](../AGENTS.md) 和 [db/README.md](../db/README.md)。每轮写作的 novel-humanizer 报告保存在本地 `quality-reports/`，该子目录由 Git 忽略，以后不暂存、不提交、不推送报告。质检及修订仍必须完成。
 - 已确认的设定、规划、正文事实与进度应同步回 `db/` 中对应文件；临时交接不替代正式资料，不将未确认事项写成定论。
 - 保留需要的交接记录；未经用户授权不自动清理文件。
 
-## 修订记录
+## 本地质检记录
 
-- [第八、九章 novel-humanizer 编辑评估（2026-11-08）](novel-humanizer_8_9_2026-11-08.json)：首次稿的设定、人物、对白与节奏核对；采用用户最新的口语留白要求，评分仍为主观判断。
-
-- [前五章 novel-humanizer 修订评估（2026-11-08）](novel-humanizer_1_5_2026-11-08.json)：记录问题示例、处理方式、篇幅与重复表达统计、九维编辑评分；评分属主观评估，不代表用户定稿。
+原有前五章、第八九章报告已迁入 `quality-reports/`。报告索引也在该忽略目录维护，不在受版本管理的文件中逐轮登记。历史提交中的报告不改写；新检出仓库不包含本地报告。
