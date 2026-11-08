@@ -1,0 +1,35 @@
+const paths = {
+  home: <path d="m4 10 8-6.5 8 6.5v9a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1Z" fill="currentColor" stroke="none" />,
+  search: <><circle cx="10.5" cy="10.5" r="6.7" /><path d="m16 16 4.2 4.2" /></>,
+  panel: <><rect x="3" y="4.5" width="18" height="15" rx="3" /><path d="M9 4.5v15" /></>,
+  edit: <><path d="M12 4H6a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h11a3 3 0 0 0 3-3v-6" /><path d="m18 3 3 3-10 10-4 1 1-4Z" /></>,
+  library: <><rect x="5" y="7" width="12" height="14" rx="2.5" transform="rotate(-9 11 14)" /><path d="m9 5 1-2 10 3a2 2 0 0 1 1 2l-2 8M5 10h4" /></>,
+  clock: <><circle cx="12" cy="12" r="8.5" /><path d="M12 6.5v6l-3.5 3" /></>,
+  discover: <><circle cx="12" cy="12" r="8.5" /><path d="m7 8 3 1 1-3 3 2-1 3 4 1-1 4-4 1-2-4-3-1Z" /></>,
+  folder: <path d="M3 8V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8h18" />,
+  code: <><path d="m8 4 4-1 4 2 4 1 1 5-1 5-4 4-5 1-5-2-3-5 2-5Z" /><path d="m8 9 3 3-3 3m6 0h3" /></>,
+  more: <><circle cx="5" cy="12" r="1" fill="currentColor" stroke="none" /><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" /><circle cx="19" cy="12" r="1" fill="currentColor" stroke="none" /></>,
+  chevron: <path d="m8 10 4 4 4-4" />,
+  right: <path d="m10 7 5 5-5 5" />,
+  plus: <path d="M12 4v16M4 12h16" />,
+  close: <path d="m6 6 12 12M6 18 18 6" />,
+  share: <><path d="M12 15V3m-4 4 4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" /></>,
+  outputs: <><circle cx="6" cy="6" r="2" /><circle cx="6" cy="18" r="2" /><path d="M12 6h8M12 12h5M12 18h8M4 12h3" /></>,
+  document: <><path d="M6 3h11a3 3 0 0 1 3 3v7l-7 8H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z" /><path d="M13 21v-6a2 2 0 0 1 2-2h5M7 8h1m3 0h5M7 12h3" /></>,
+  attachment: <path d="M8 12v5a4 4 0 0 0 8 0V6a3 3 0 0 0-6 0v10a1 1 0 0 0 2 0V7" />,
+  copy: <><rect x="3" y="7" width="13" height="14" rx="3" /><path d="M8 7V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" /></>,
+  like: <><path d="M8 10 12 3a2 2 0 0 1 2 2v5h5a2 2 0 0 1 2 2l-2 7a2 2 0 0 1-2 2H8Z" /><path d="M3 10h5v11H3Z" /></>,
+  dislike: <><path d="m8 14 4 7a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2l-2-7a2 2 0 0 0-2-2H8Z" /><path d="M3 3h5v11H3Z" /></>,
+  volume: <><path d="M4 9h4l5-4v14l-5-4H4ZM17 8a7 7 0 0 1 0 8m3-11a11 11 0 0 1 0 14" /></>,
+  microphone: <><rect x="9" y="2" width="6" height="13" rx="3" /><path d="M5 11v1a7 7 0 0 0 14 0v-1M12 19v3" /></>,
+  voice: <path d="M4 10v4m4-8v12m4-15v18m4-14v10m4-7v4" />,
+  bolt: <path d="m13 2-9 12h7l-1 8 10-13h-8Z" fill="currentColor" stroke="none" />,
+  arrowUp: <path d="M12 20V4m-6 6 6-6 6 6" />,
+  arrowDown: <path d="M12 4v16m-6-6 6 6 6-6" />,
+  check: <path d="m5 12 4 4L19 6" />,
+  progress: <><circle cx="12" cy="12" r="9" strokeOpacity=".25" /><path d="M12 3a9 9 0 0 1 0 18" /><path d="m12 7 5 5-5 5-5-5Z" fill="currentColor" stroke="none" opacity=".35" /></>,
+};
+
+export default function Icon({ name, size = 20, className = "" }) {
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={className}>{paths[name]}</svg>;
+}
