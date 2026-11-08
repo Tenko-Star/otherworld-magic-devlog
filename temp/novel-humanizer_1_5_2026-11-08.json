@@ -1,0 +1,397 @@
+{
+  "date": "2026-11-08",
+  "title": "前五章 novel-humanizer 修订评估",
+  "baseline_commit": "7c73044",
+  "skill": {
+    "name": "novel-humanizer",
+    "installed_path": "C:/Users/admin/.codex/skills/novel-humanizer/SKILL.md",
+    "source": "https://raw.githubusercontent.com/Wooooooooood/ai-fiction-writer/refs/heads/main/%E7%BA%AF%E5%87%80%E7%89%88skill/novel-humanizer/SKILL.md"
+  },
+  "scope": "先恢复首次局部修改，再基于干净工作区润色前五章；第六章用于衔接核对，第六、第七章正文不修改。",
+  "method": {
+    "reviewer": "本次执行任务的同一语言模型",
+    "assessment": "九维分数是基于全文、当前设定及人物场景档案的主观编辑评估，不是自动检测概率、独立审稿或用户评价。",
+    "scanning": "读取正文与正式资料、逐段人工审读、PowerShell/rg匹配重复表达及注释、核对修改后的相关上下文。字数按基本汉字区间U+4E00—U+9FFF统计，含标题；非空白字符数含标点。",
+    "example_selection": "issues保存有代表性的问题与已落实修改，并非完整逐句清单；完整改动以Git diff为准。line均指本轮基线，revision可为修订段落摘录。",
+    "project_adaptation": "遵守项目AGENTS.md，使用db/中的人物、场景、设定、摘要与进度，不复制到.novel/。报告存于temp/，未引入配置系统、逐段HTML注释、微逻辑卡或不存在的脚本产物。",
+    "reference_fiction": "未使用外部对标小说。",
+    "finality": "未执行novel-review，不以本轮分数自动标记final。"
+  },
+  "weights": {
+    "logic": 0.18,
+    "character_consistency": 0.16,
+    "worldbuilding_consistency": 0.08,
+    "era_fitness": 0.14,
+    "dialogue_naturalness": 0.11,
+    "literary": 0.1,
+    "emotion_expression": 0.1,
+    "pacing": 0.09,
+    "de_systemization": 0.04
+  },
+  "checks": {
+    "timeline": "保留婴儿期—三岁工坊—四岁家庭启蒙—五岁集市—六岁入学与数周微光练习；鲁迪大四岁。",
+    "roles": "保留父母劳动家庭、玛莎基础女教师、奥伦附魔师、莉娅与托马斯两名核心伙伴；未新增具名人物。托马斯施法较弱不等于理解力低。",
+    "knowledge": "第五章仅听见相似咒段；第六章才核对文字并逐渐摸索，不提前写入机器输入、古代文明或函数成果。",
+    "worldbuilding": "保留人体短时缓冲、使用者持续供能、无晶体暖布板、材料与工艺限制。带宽培养依既定设定澄清；没有新增数值和机制。",
+    "economy": "保留铜币修理价与自营劳动、旧物维修；不把节俭解释成赤贫，也未补造具体家庭支出。",
+    "adjacent_chapter": "第五章新增母亲饭后再念的明确答应，对应第六章开头；父母学院经历仍留在第六章。",
+    "era": "前世办公场景保留现代词；穿越后的程序员类比主要保留在男主思考中，本地对白不加入现代技术话术或刻意方言。",
+    "endings": "以点火疑问、母亲感知提问、继续学字动作、离开器具后的问题、相似咒段发现收束，不添加新危机。",
+    "unsupported_skill_artifacts": "项目原本无.novel逻辑矩阵及场景卡，按现有档案完成语义核对，不把缺少另一套目录判为正文缺陷。",
+    "unresolved_material_conflicts": "本轮未发现需要变更既有核心机制或重排剧情的硬冲突；仅澄清歧义与回指。"
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "file": "第一章_这次真的下班了.md",
+      "status": "revised_pending_user_review",
+      "measurements": {
+        "han_characters_before": 9712,
+        "han_characters_after": 9362,
+        "non_whitespace_characters_after": 10579,
+        "transition_phrase_count_before": 9,
+        "transition_phrase_count_after": 2
+      },
+      "scores_before": {
+        "logic": 90,
+        "character_consistency": 89,
+        "worldbuilding_consistency": 91,
+        "era_fitness": 95,
+        "dialogue_naturalness": 75,
+        "literary": 77,
+        "emotion_expression": 73,
+        "pacing": 73,
+        "de_systemization": 100
+      },
+      "scores_after": {
+        "logic": 93,
+        "character_consistency": 91,
+        "worldbuilding_consistency": 94,
+        "era_fitness": 95,
+        "dialogue_naturalness": 86,
+        "literary": 85,
+        "emotion_expression": 86,
+        "pacing": 84,
+        "de_systemization": 100
+      },
+      "total_before": 84.84,
+      "total_after": 90.24,
+      "issues": [
+        {
+          "type": "template_narration",
+          "severity": "medium",
+          "line": 81,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "凌晨两点的勇气，往往会变成第二天早上的事故报告。",
+          "revision": "他连这几处旧规则都没核对齐，脑子也已经发木。真要现在动手，明早恐怕又得赶来补救。",
+          "reason": "改用当下判断，减少警句式总结。",
+          "status": "addressed"
+        },
+        {
+          "type": "setting_wording_ambiguity",
+          "severity": "medium",
+          "line": 507,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "家里并不宽裕。",
+          "revision": "家里过日子很仔细。柴火不会白白烧着，碗磕缺了口，女人要摸一摸裂纹，看看还能不能用。",
+          "reason": "保留节俭与漏雨事件，不由婴儿的有限观察断言家庭贫困；普通自营家庭略高于平均收入的设定不变。",
+          "status": "addressed"
+        },
+        {
+          "type": "casting_sequence_ambiguity",
+          "severity": "high",
+          "line": 635,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "于是，他看见了那一点光。",
+          "revision": "女人低声念了几个陌生的音节，指尖前亮起一点光。",
+          "reason": "原段先见光、后叙述念咒，容易误读为无声施法；调整动作顺序，不确定任何新施法机制。",
+          "status": "addressed"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "file": "第二章_铁匠家的孩子.md",
+      "status": "revised_pending_user_review",
+      "measurements": {
+        "han_characters_before": 8114,
+        "han_characters_after": 7626,
+        "non_whitespace_characters_after": 9122,
+        "transition_phrase_count_before": 6,
+        "transition_phrase_count_after": 0
+      },
+      "scores_before": {
+        "logic": 93,
+        "character_consistency": 90,
+        "worldbuilding_consistency": 93,
+        "era_fitness": 95,
+        "dialogue_naturalness": 71,
+        "literary": 77,
+        "emotion_expression": 75,
+        "pacing": 74,
+        "de_systemization": 100
+      },
+      "scores_after": {
+        "logic": 94,
+        "character_consistency": 92,
+        "worldbuilding_consistency": 94,
+        "era_fitness": 95,
+        "dialogue_naturalness": 87,
+        "literary": 84,
+        "emotion_expression": 86,
+        "pacing": 85,
+        "de_systemization": 100
+      },
+      "total_before": 85.55,
+      "total_after": 90.68,
+      "issues": [
+        {
+          "type": "manual_dialogue",
+          "severity": "medium",
+          "line": 213,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "许可附带着许多条件。",
+          "revision": "马丁在靠门的墙边摆了只矮凳，用白灰在旁边画了一个圈，又往炉前划了一条线。",
+          "reason": "将许可清单拆回安置凳子、提醒水桶等现场动作，保留工作安全边界。",
+          "status": "addressed"
+        },
+        {
+          "type": "rhetorical_dialogue",
+          "severity": "medium",
+          "line": 635,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "“你要帮我找，还是让我自己找？”",
+          "revision": "“往里面放，我拿着不顺手呀。”",
+          "reason": "母亲从取线习惯解释摆放，不把生活对话写成训诫。",
+          "status": "addressed"
+        },
+        {
+          "type": "explanatory_narration",
+          "severity": "medium",
+          "line": 671,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "没有谁夸他是天才，也没有谁因此改变对一个小孩的看法。",
+          "revision": "那只盒子就此留在窗边。",
+          "reason": "用盒子继续被使用体现帮助的价值，删去作者对天才身份的反复否定。",
+          "status": "addressed"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "file": "第三章_没有魔法师长袍的人们.md",
+      "status": "revised_pending_user_review",
+      "measurements": {
+        "han_characters_before": 8311,
+        "han_characters_after": 8005,
+        "non_whitespace_characters_after": 9428,
+        "transition_phrase_count_before": 6,
+        "transition_phrase_count_after": 0
+      },
+      "scores_before": {
+        "logic": 93,
+        "character_consistency": 91,
+        "worldbuilding_consistency": 92,
+        "era_fitness": 95,
+        "dialogue_naturalness": 72,
+        "literary": 76,
+        "emotion_expression": 75,
+        "pacing": 73,
+        "de_systemization": 100
+      },
+      "scores_after": {
+        "logic": 94,
+        "character_consistency": 92,
+        "worldbuilding_consistency": 94,
+        "era_fitness": 95,
+        "dialogue_naturalness": 86,
+        "literary": 84,
+        "emotion_expression": 85,
+        "pacing": 84,
+        "de_systemization": 100
+      },
+      "total_before": 85.55,
+      "total_after": 90.38,
+      "issues": [
+        {
+          "type": "strained_metaphor",
+          "severity": "medium",
+          "line": 293,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "近到一脚就能踩进沾着它的泥里。",
+          "revision": "他又望向那个刮鞋的老人。对方皱着眉，把木片换了个方向，和嵌在鞋底的一粒石子较劲。",
+          "reason": "回到集市人物的动作，不用含混比喻总结魔法普及。",
+          "status": "addressed"
+        },
+        {
+          "type": "forced_quip",
+          "severity": "medium",
+          "line": 499,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "别的旧地方，我不替它许愿。",
+          "revision": "其他地方旧了，我可保不准。",
+          "reason": "维修工的回答直接交代保证范围，保留材料与维修经验。",
+          "status": "addressed"
+        },
+        {
+          "type": "aphoristic_ending",
+          "severity": "medium",
+          "line": 957,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "总要先从看得懂的地方开始。",
+          "revision": "伊恩写完名字，手指黑了一片，却仍捏着炭笔，在旁边空出一行：“再教我几个吧。”",
+          "reason": "以继续学字的动作收束，保留第三至第四章读写成长。",
+          "status": "addressed"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "file": "第四章_第一堂魔法课.md",
+      "status": "revised_pending_user_review",
+      "measurements": {
+        "han_characters_before": 8733,
+        "han_characters_after": 7939,
+        "non_whitespace_characters_after": 9433,
+        "transition_phrase_count_before": 6,
+        "transition_phrase_count_after": 0
+      },
+      "scores_before": {
+        "logic": 90,
+        "character_consistency": 89,
+        "worldbuilding_consistency": 88,
+        "era_fitness": 95,
+        "dialogue_naturalness": 69,
+        "literary": 75,
+        "emotion_expression": 72,
+        "pacing": 70,
+        "de_systemization": 100
+      },
+      "scores_after": {
+        "logic": 94,
+        "character_consistency": 92,
+        "worldbuilding_consistency": 95,
+        "era_fitness": 95,
+        "dialogue_naturalness": 85,
+        "literary": 84,
+        "emotion_expression": 85,
+        "pacing": 83,
+        "de_systemization": 100
+      },
+      "total_before": 83.37,
+      "total_after": 90.26,
+      "issues": [
+        {
+          "type": "setting_wording_ambiguity",
+          "severity": "high",
+          "line": 689,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "至于天生能通多少，不是多憋几口气就能改的。",
+          "revision": "能提高，不过得长期专门练，也会用到魔药。你们现在练的是怎么引、怎么停，硬往里挤可不行。",
+          "reason": "不将旧句判作否定一切培养的硬冲突；按已定设定消除歧义，无数值、配方或服药经历。",
+          "status": "addressed"
+        },
+        {
+          "type": "genre_meta_narration",
+          "severity": "medium",
+          "line": 859,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "没有突然出现的异常，也没有老师大惊失色地抓住他的手。",
+          "revision": "和多数人差不多。伊恩低头看了一会儿叶片，难免有点失落。",
+          "reason": "删去对其他小说桥段的旁白比较，保留主角期待与粗略判断。",
+          "status": "addressed"
+        },
+        {
+          "type": "explanatory_relationship",
+          "severity": "medium",
+          "line": 955,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "他们没有认真商量过要成为朋友，也没有谁说以后一定一起做什么大事。",
+          "revision": "伊恩临走又看了一眼桌面，想着下次早点来，替他们留好位置。",
+          "reason": "以留座体现友谊；两名核心伙伴、鲁迪配角地位不变。",
+          "status": "addressed"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "file": "第五章_一盏不太争气的灯.md",
+      "status": "revised_pending_user_review",
+      "measurements": {
+        "han_characters_before": 7571,
+        "han_characters_after": 7064,
+        "non_whitespace_characters_after": 8297,
+        "transition_phrase_count_before": 18,
+        "transition_phrase_count_after": 0
+      },
+      "scores_before": {
+        "logic": 91,
+        "character_consistency": 90,
+        "worldbuilding_consistency": 93,
+        "era_fitness": 95,
+        "dialogue_naturalness": 68,
+        "literary": 75,
+        "emotion_expression": 71,
+        "pacing": 69,
+        "de_systemization": 100
+      },
+      "scores_after": {
+        "logic": 95,
+        "character_consistency": 92,
+        "worldbuilding_consistency": 94,
+        "era_fitness": 95,
+        "dialogue_naturalness": 86,
+        "literary": 84,
+        "emotion_expression": 86,
+        "pacing": 84,
+        "de_systemization": 100
+      },
+      "total_before": 83.81,
+      "total_after": 90.66,
+      "issues": [
+        {
+          "type": "manual_dialogue",
+          "severity": "medium",
+          "line": 513,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "“那就用你最顺的声音。”",
+          "revision": "“小声些，和平常一样念就行。”",
+          "reason": "直接说清母亲在纠正什么，去掉抽象模板句。",
+          "status": "addressed"
+        },
+        {
+          "type": "manual_dialogue",
+          "severity": "medium",
+          "line": 557,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "“那就记住这一次。”",
+          "revision": "“刚才照到线盒了。”她把盒子往旁边挪一点，“手酸不酸？歇会儿吧。”",
+          "reason": "从可见效果与孩子的体力回应，避免每次成功都由成人总结。",
+          "status": "addressed"
+        },
+        {
+          "type": "adjacent_chapter_link",
+          "severity": "high",
+          "line": 949,
+          "line_reference": "baseline_commit_7c73044",
+          "text": "那几个音，却没有从脑子里离开。",
+          "revision": "父亲掰开面包，催他吃饭，艾琳把衣服放到一旁：“吃完我再给你念。”",
+          "reason": "明确第六章开头回指的饭后约定；仍仅发现相似咒段，不提前确认语义或函数。",
+          "status": "addressed"
+        }
+      ]
+    }
+  ],
+  "trend": {
+    "comparison": "同一批五章的修订前后自评；不是跨日期历史趋势",
+    "average_before": 84.62,
+    "average_after": 90.44,
+    "transition_pattern": "这一次|这次|这一回|这回",
+    "transition_before": 45,
+    "transition_after": 2,
+    "retained_occurrences": "第一章标题及前世家人询问能住几天，均有具体语义，未机械删除。",
+    "interpretation": "词频降低只说明重复转场减少，不能单独证明文学质量。最需用户判断的仍是对白口吻与节奏。",
+    "radar_text": "设定、时代与人物边界较稳定；本轮重点提高对白自然度、情绪表达和叙事节奏。课堂章节仍保留必要的过程性说明。"
+  },
+  "user_review": "待用户阅读前五章；可据具体段落反馈继续调整，未宣称AI味已被客观消除。"
+}
