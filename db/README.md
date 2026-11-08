@@ -6,7 +6,7 @@
 
 | 文件 | 用途 |
 | --- | --- |
-| [settings.md](settings.md) | 公共世界设定、资源与币制、魔力机制、技术路线、篇幅要求与待定问题 |
+| [settings.md](settings.md) | 公共世界设定、教育分级与院系、资源与币制、带宽和培养机制、技术路线、篇幅要求与待定问题 |
 | [persons.md](persons.md) | 主要人物与指定配角档案、关系、出场事实、确定的后续安排与待审方案 |
 | [scenes.md](scenes.md) | 地域、店铺、住处、家庭生计与可用场景，区分已有依据和新增设定 |
 | [outline_overview.md](outline_overview.md) | 跨章节总纲、尚未确定章号的卷级规划、备选场景与长期伏笔 |
